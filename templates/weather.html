@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Weather data{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1>Weather data from database</h1>
+  <table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Time</th>
+    <th>Temperature</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for weather in weathers %}
+    <tr>
+    <td>{{ weather.time }}</td>
+    <td>{{ weather.temperature }}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}
